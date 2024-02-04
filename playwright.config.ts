@@ -1,0 +1,22 @@
+import { defineConfig } from '@playwright/test';
+
+/**
+ * See https://playwright.dev/docs/test-configuration.
+ */
+export default defineConfig({
+  testDir: './tests',
+  /* Maximum time one test can run for */
+  timeout: 30 * 1000,
+  /* Maximum time for an assertion */
+  expect: {
+    timeout: 5000
+  },
+  reporter: 'html',
+  /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
+  use: {
+    browserName: 'webkit',
+    headless: true,
+    screenshot: 'only-on-failure',
+    trace: 'retain-on-failure'
+  },
+});
