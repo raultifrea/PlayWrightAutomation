@@ -17,6 +17,7 @@ export default defineConfig({
     browserName: 'webkit',
     headless: true,
     screenshot: 'only-on-failure',
-    trace: 'retain-on-failure'
+    //http://trace.playwright.dev/
+    trace: 'retain-on-failure' //off,on
   },
 });

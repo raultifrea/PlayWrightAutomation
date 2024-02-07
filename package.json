@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "open-ui": "npx playwright test --ui"
+    "open-ui": "npx playwright test --ui",
+    "test": "npx playwright test tests/WebAPIPart1.spec.js. --headed"
   },
   "keywords": [],
   "author": "",
