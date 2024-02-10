@@ -37,7 +37,7 @@ test('Intercept route and fake response', async ({ page }) => {
         //Sends HTTP(S) request and returns its response. 
         const response = await page.request.fetch(route.request());
         let body = JSON.stringify(fakePayLoadOrders);
-        //Fulfills route's request with given response.
+        //Fulfills route's request with given response and custom body.
         route.fulfill({
             response,
             body,

@@ -10,6 +10,15 @@ test('Browser Context Playwright test', async ({browser}) => {
     const signInBtn = page.locator('#signInBtn');
     const cardTitles = page.locator('.card-title > a');
 
+    //Intercept requests that contain any image type extension, then abort the images loading. Test will still pass
+    // page.route('**/*{jpg,png,jpeg}', route => route.abort());
+
+    //print to console all urls from all requests made in this test
+    // page.on('request', request => console.log(request.url()));
+
+    //print to console all urls and their status code from all the resposnes in this test
+    page.on('response', response => console.log(response.url(), response.status()));
+
     await page.goto('https://rahulshettyacademy.com/loginpagePractise/');
     // console.log(await page.title());
     await expect(page).toHaveTitle('LoginPage Practise | Rahul Shetty Academy');

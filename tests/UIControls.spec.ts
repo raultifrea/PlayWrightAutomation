@@ -3,7 +3,6 @@ import test, { expect } from "@playwright/test";
 test('UI Controls',async ({page}) => {
 
     const dropdown = page.locator('select.form-control');
-    const signInBtn = page.locator('#signInBtn');
     const radioBtn = page.locator('.radiotextsty');
     const okBtn = page.locator('#okayBtn');
     const termsBtn = page.locator('#terms');
@@ -37,6 +36,10 @@ test('Child Windows handling', async ({browser}) => {
 
     const context = await browser.newContext();
     const page = await context.newPage();
+
+    //Aborts an intercepted request, this example will not load the css request. Test will still pass
+    // page.route('**/*.css', route => route.abort());
+
     const documentLink = page.locator("[href*='documents-request']");
     const userName = page.locator('#username');
     
