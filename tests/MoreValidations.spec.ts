@@ -29,3 +29,29 @@ test("Popup validations", async ({page}) => {
     const textCheck = await framesPage.locator('.text > h2').textContent();
     console.log(textCheck?.split(' ')[1]);
 });
+
+test("Screenshots", async ({page}) => {
+    
+    await page.goto("https://rahulshettyacademy.com/AutomationPractice/");
+
+    await expect(page.locator('#displayed-text')).toBeVisible();
+
+    //takes screenshot of the element we need and saves it in the root folder
+    await page.locator('#displayed-text').screenshot({path: 'screenshots/partialScreenshot.png'});
+
+    await page.locator('#hide-textbox').click();
+
+    //takes page screenshot and saves it in the root folder
+    await page.screenshot({path: 'screenshots/fullScreenshot.png'});
+
+    await expect(page.locator('#displayed-text')).toBeHidden();
+
+});
+
+test('Visual comparison', async ({page}) => {
+
+    await page.goto('https://www.google.com/');
+
+    //compares screenshot with baseline. First time fails and creates baseline
+    expect(await page.screenshot()).toMatchSnapshot('landing.png');
+});
