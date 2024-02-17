@@ -1,4 +1,4 @@
-import { defineConfig } from '@playwright/test';
+import { defineConfig, devices } from '@playwright/test';
 
 /**
  * See https://playwright.dev/docs/test-configuration.
@@ -19,7 +19,10 @@ export default defineConfig({
         browserName: 'webkit',
         headless: false,
         screenshot: 'on',
-        trace: 'on'
+        trace: 'on',
+        video: 'retain-on-failure',
+        // viewport: {width:720, height:720},
+        // ...devices['iPhone 11'],
       },
     },
     {
@@ -28,8 +31,11 @@ export default defineConfig({
         browserName: 'chromium',
         headless: true,
         screenshot: 'only-on-failure',
+        ignoreHTTPSErrors: true,
+        permissions: ['geolocation'],
         //http://trace.playwright.dev/
-        trace: 'retain-on-failure' //off,on
+        trace: 'retain-on-failure', //off,on
+        // ...devices['Galaxy S8 landscape']
       },
     }
   ]
