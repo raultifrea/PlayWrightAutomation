@@ -5,7 +5,10 @@
   "main": "index.js",
   "scripts": {
     "open-ui": "npx playwright test --ui",
-    "test": "npx playwright test tests/WebAPIPart1.spec.js. --headed"
+    "test": "npx playwright test tests/WebAPIPart1.spec.js. --headed",
+    "tests-customConfig": "npx playwright test tests/UIPracticeTestFixture.spec.ts --config playwright.configCustom.ts",
+    "tests-Chrome": "npx playwright test tests/UIPracticeTestFixture.spec.ts --config playwright.configCustom.ts --project Chrome",
+    "tests-Safari": "npx playwright test tests/UIPracticeTestFixture.spec.ts --config playwright.configCustom.ts --project Safari"
   },
   "keywords": [],
   "author": "",
