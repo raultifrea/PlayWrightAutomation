@@ -1,9 +1,9 @@
-import {test, expect } from "@playwright/test";
+import {test, expect, BrowserContext } from "@playwright/test";
 
 const country: string = 'Sweden'
 const email = 'raultifrea@gmail.com';
 const password = 'TestPass1!';
-let webContext;
+let webContext: BrowserContext;
 
 test.beforeAll( async({browser}) => {
 
@@ -15,7 +15,6 @@ test.beforeAll( async({browser}) => {
     const userPassword = page.locator('#userPassword');
     const loginBtn = page.locator('#login');  
     
-
     //Initialize playwright requests context
     await page.goto('https://rahulshettyacademy.com/client/');
     await userName.fill(email);
@@ -27,11 +26,10 @@ test.beforeAll( async({browser}) => {
     await context.storageState({path: 'state.json'});
     //pass the storage state to a new context of a browser
     webContext = await browser.newContext({storageState: 'state.json'});
-
 });
 
 
-test('Make full e2e purchase and assertions using UI ', async () => {
+test('@Api Make full e2e purchase and assertions using UI ', async () => {
 
     //reuse the new Context with the current storage
     const page = await webContext.newPage();
@@ -119,7 +117,7 @@ test('Make full e2e purchase and assertions using UI ', async () => {
     // await page.pause();
 });
 
-test('Print all titles', async () => {
+test('@Api Print all titles', async () => {
 
     //reuse the new Context with the current storage
     const page = await webContext.newPage();

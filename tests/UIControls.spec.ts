@@ -1,6 +1,6 @@
 import test, { expect } from "@playwright/test";
 
-test('UI Controls',async ({page}) => {
+test('@Web UI Controls',async ({page}) => {
 
     const dropdown = page.locator('select.form-control');
     const radioBtn = page.locator('.radiotextsty');
@@ -32,7 +32,7 @@ test('UI Controls',async ({page}) => {
     await expect(documentLink).toHaveAttribute('class', 'blinkingText');
 });
 
-test('Child Windows handling', async ({browser}) => {
+test('@Web Child Windows handling', async ({browser}) => {
 
     const context = await browser.newContext();
     const page = await context.newPage();

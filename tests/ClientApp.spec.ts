@@ -1,7 +1,7 @@
 import { expect, test } from '@playwright/test';
 import LoginPagePractise from '../PageObjects/LoginPagePractise';
 
-test('Browser Context Playwright test', async ({browser}) => {
+test('@Web Browser Context Playwright test', async ({browser}) => {
     
     const context = await browser.newContext();
     const page = await context.newPage();
@@ -47,7 +47,7 @@ test('Browser Context Playwright test', async ({browser}) => {
 
 });
 
-test('First Playwright test', async ({page}) => {
+test('@Web First Playwright test', async ({page}) => {
     
     await page.goto('https://google.com');
     // console.log(await page.title());

@@ -6,7 +6,7 @@ import placeOrderTestData from "../utils/placeOrderTestData.json";
 for (const data of (placeOrderTestData as Array<any>)) {
     const { email, password, productName, country } = data;
 
-    test(`Make full e2e purchase and assertions using UI for ${country}`, async ({page}) => {
+    test(`@Web Make full e2e purchase and assertions using UI for ${country}`, async ({page}) => {
 
         const poManager = new POManager(page);
     

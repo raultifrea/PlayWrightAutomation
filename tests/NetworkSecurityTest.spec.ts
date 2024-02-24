@@ -1,5 +1,5 @@
 import test, { expect, request } from "@playwright/test";
-import APIUtils from "./utils/APIUtils";
+import APIUtils from "../utils/APIUtils";
 
 const loginPayload = { userEmail: "raultifrea@gmail.com", userPassword: "TestPass1!" }
 let token: string;
@@ -14,7 +14,7 @@ test.beforeAll(async () => {
     token = await apiUtils.getToken();
 });
 
-test('Security test request intercept', async ({page}) => {
+test('@Api Security test request intercept', async ({page}) => {
     //locators
     const myOrders = page.locator("[routerlink*=myorders]");
 

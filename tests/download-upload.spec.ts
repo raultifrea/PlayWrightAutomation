@@ -39,7 +39,7 @@ async function readExcel(worksheet: { eachRow: (arg0: (row: any, rowNumber: any)
     return output;
 }
 
-test("Upload download excel validation", async ({page}) => {
+test("@Web Upload download excel validation", async ({page}) => {
 
     const textSearch = 'Mango';
     const updateValue = '350';

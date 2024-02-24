@@ -5,17 +5,23 @@
   "main": "index.js",
   "scripts": {
     "open-ui": "npx playwright test --ui",
-    "test": "npx playwright test tests/WebAPIPart1.spec.js. --headed",
+    "test_individual": "npx playwright test tests/WebAPIPart1.spec.js. --headed",
+    "test_webTag": "npx playwright test --grep @Web",
+    "test_apiTag": "npx playwright test --grep @Api",
     "tests-customConfig": "npx playwright test tests/UIPracticeTestFixture.spec.ts --config playwright.configCustom.ts",
     "tests-Chrome": "npx playwright test tests/UIPracticeTestFixture.spec.ts --config playwright.configCustom.ts --project Chrome",
-    "tests-Safari": "npx playwright test tests/UIPracticeTestFixture.spec.ts --config playwright.configCustom.ts --project Safari"
+    "tests-Safari": "npx playwright test tests/UIPracticeTestFixture.spec.ts --config playwright.configCustom.ts --project Safari",
+    "run-web-tests-allure": "npx playwright test --grep @Web --reporter=line,allure-playwright",
+    "generate-allure-report": "allure generate allure-results --clean",
+    "open-allure-report": "allure open allure-report"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@playwright/test": "^1.41.1",
+    "@playwright/test": "^1.41.2",
     "@types/node": "^20.11.7",
+    "allure-playwright": "^2.12.2",
     "exceljs": "^4.4.0"
   }
 }

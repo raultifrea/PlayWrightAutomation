@@ -1,5 +1,5 @@
 import { test, expect, request } from "@playwright/test";
-import APIUtils from "./utils/APIUtils";
+import APIUtils from "../utils/APIUtils";
 
 const country: string = 'Romania'
 const sneakersId: string = '6581ca979fd99c85e8ee7faf'
@@ -18,7 +18,7 @@ test.beforeAll(async () => {
 });
 
 
-test('Intercept route and fake response', async ({ page }) => {
+test('@Api Intercept route and fake response', async ({ page }) => {
 
     //locators
     const myOrders = page.locator("[routerlink*=myorders]");
