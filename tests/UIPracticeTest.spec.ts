@@ -39,7 +39,7 @@ for (const data of (placeOrderTestData as Array<any>)) {
     
         await cartPage.goToCheckout();
     
-        // fill in credit card info
+        //fill in credit card info
         await orderPage.fillInCreditCardInfo('123', 'Raul Tifrea')
     
         //fill shipping info

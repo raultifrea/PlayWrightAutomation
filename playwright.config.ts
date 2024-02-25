@@ -5,7 +5,7 @@ import { defineConfig } from '@playwright/test';
  */
 export default defineConfig({
   testDir: './tests',
-  retries: 2,
+  retries: 1,
   /* number of parallel test specs to execute */
   // workers: 3,
   /* Maximum time one test can run for */

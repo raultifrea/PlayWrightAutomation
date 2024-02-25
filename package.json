@@ -13,7 +13,8 @@
     "tests-Safari": "npx playwright test tests/UIPracticeTestFixture.spec.ts --config playwright.configCustom.ts --project Safari",
     "run-web-tests-allure": "npx playwright test --grep @Web --reporter=line,allure-playwright",
     "generate-allure-report": "allure generate allure-results --clean",
-    "open-allure-report": "allure open allure-report"
+    "open-allure-report": "allure open allure-report",
+    "cucumberAll": "npx cucumber-js --exit"
   },
   "keywords": [],
   "author": "",
@@ -22,6 +23,10 @@
     "@playwright/test": "^1.41.2",
     "@types/node": "^20.11.7",
     "allure-playwright": "^2.12.2",
-    "exceljs": "^4.4.0"
+    "exceljs": "^4.4.0",
+    "ts-node": "^10.9.2"
+  },
+  "dependencies": {
+    "@cucumber/cucumber": "^10.3.1"
   }
 }
