@@ -6,9 +6,11 @@ import OrderPage from "./ClientApp/OrderPage";
 import ConfirmationPage from "./ClientApp/ConfirmationPage";
 import MyOrdersPage from "./ClientApp/MyOrdersPage";
 import OrderSummaryPage from "./ClientApp/OrderSummaryPage";
+import LoginPagePractise from "./LoginPagePractise";
 
 export default class POManager{
     loginPage: LoginPage;
+    loginPractisePage: LoginPagePractise;
     dashboardPage: DashboardPage;
     page: Page;
     cartPage: CartPage;
@@ -20,6 +22,7 @@ export default class POManager{
     constructor(page: Page){
         this.page = page;
         this.loginPage = new LoginPage(this.page);
+        this.loginPractisePage = new LoginPagePractise(this.page);
         this.dashboardPage = new DashboardPage(this.page);
         this.cartPage = new CartPage(this.page);
         this.orderPage = new OrderPage(this.page);
@@ -30,6 +33,10 @@ export default class POManager{
 
     async getLoginPage() {
         return this.loginPage;
+    }
+
+    async getLoginPractisePage() {
+        return this.loginPractisePage;
     }
 
     async getDashboardPage() {

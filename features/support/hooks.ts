@@ -14,16 +14,16 @@ Before(async function() {
 });
 
 /**
- * runs after each Scenario
+ * runs after each Scenario under the Regression tag only
  */
-After(async function () {
+After("@Regression", async function () {
    console.log("I am executed in the After hook"); 
 });
 
 /**
- *  this step will be executed before each step
+ *  this step will be executed before each step only for the Validation tag
  */
-BeforeStep(async function() {
+BeforeStep("@Validation", async function() {
 });
 
 /**

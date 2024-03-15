@@ -1,4 +1,5 @@
 import { When, Then, Given } from '@cucumber/cucumber';
+import LoginPagePractise from '../../PageObjects/LoginPagePractise';
 const { expect } = require('@playwright/test'); //does not recognise correctly using import
 
 Given('a login to Eccommerce application with {string} and {string}', {timeout: 100*1000}, async function (email, password) {
@@ -39,4 +40,19 @@ Then('Verify order is present in the Order History', async function () {
     await myOrdersPage.viewOrderDetails(this.orderID);
     const orderIdDetails = await orderSummaryPage.orderIdDetails.textContent();
     expect(this.orderID.includes(orderIdDetails)).toBeTruthy();
+});
+
+Given('a login to LoginPractisePage application with {string} and {string}', async function (username, password) {
+    const loginPage = await this.poManager.getLoginPractisePage();
+    await this.page.goto('https://rahulshettyacademy.com/loginpagePractise/');
+    await expect(this.page).toHaveTitle('LoginPage Practise | Rahul Shetty Academy');
+    //Try login with incorrect credentials and assert
+    await loginPage.validLogin(username,password)
+  });
+
+Then('Verify Error message is displayed', async function () {
+    await expect(this.page.locator('.alert-danger')).toHaveCSS('display', 'block');
+    const errorText = await this.page.locator("[style*='block']").textContent();
+    expect(errorText).toContain('Incorrect');
+    expect(errorText).toEqual('Incorrect username/password.');
 });

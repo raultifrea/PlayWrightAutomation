@@ -14,7 +14,10 @@
     "run-web-tests-allure": "npx playwright test --grep @Web --reporter=line,allure-playwright",
     "generate-allure-report": "allure generate allure-results --clean",
     "open-allure-report": "allure open allure-report",
-    "cucumberAll": "npx cucumber-js --exit"
+    "cucumberAll": "npx cucumber-js --exit",
+    "cucumberRegression": "npx cucumber-js --tags \"@Regression\" --parallel 2 --exit --format html:cucumber-report.html --retry 1",
+    "cucumberValidation": "npx cucumber-js --tags \"@Validation\" --exit",
+    "cucumberParallel": "npx cucumber-js features/Ecommerce.feature --parallel 2 --exit"
   },
   "keywords": [],
   "author": "",
