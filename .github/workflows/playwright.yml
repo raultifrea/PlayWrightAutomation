@@ -20,6 +20,7 @@ jobs:
     - name: Run Playwright tests
       run: npx playwright test
     - name: Run Cucumber Regression
+      if: always()
       run: npm run cucumberRegression
     - uses: actions/upload-artifact@v3
       if: always()
