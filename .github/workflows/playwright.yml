@@ -33,4 +33,5 @@ jobs:
           playwright-report/
           cucumber-report.html
           tests/MoreValidations.spec.ts-snapshots/
+          test-results/
         retention-days: 30
