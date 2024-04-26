@@ -8,7 +8,7 @@ test('@Web Calendar validation', async ({page}) => {
     const expectedList = [monthNumber, date, year];
 
     //takes a CSS selector and returns a Promise that resolves to an array of ElementHandle objects
-    const inputs = await page.$$('.react-date-picker__inputGroup > input');
+    const inputs: any = await page.$$('.react-date-picker__inputGroup > input');
 
     await page.goto('https://rahulshettyacademy.com/seleniumPractise/#/offers');
 

@@ -1,8 +1,8 @@
 import { expect } from "@playwright/test";
 import {customtest} from "../utils/test-base.js"
-import POManager from "../PageObjects/POManager";
+import POManager from "../PageObjects/POManager.js";
 
-customtest.skip(`@Web Go to checkout using UI using fixtures for test Data`, async ({page,testDataForOrder}) => {
+customtest(`@Web Go to checkout using UI using fixtures for test Data`, async ({page,testDataForOrder}) => {
 
     const poManager = new POManager(page);
 

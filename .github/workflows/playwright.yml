@@ -18,6 +18,8 @@ jobs:
       run: npm ci
     - name: Install Playwright Browsers
       run: npx playwright install --with-deps
+    - name: Run type checks
+      run: npx tsc -p tsconfig.json --noEmit
     - name: Run Playwright tests
       run: npx playwright test
     - name: Run Cucumber Regression
