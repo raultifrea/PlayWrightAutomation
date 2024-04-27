@@ -14,7 +14,7 @@ export default defineConfig({
   expect: {
     timeout: 5000
   },
-  reporter: 'html',
+  reporter: process.env.CI ? 'blob' : 'html',
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     browserName: 'chromium',
