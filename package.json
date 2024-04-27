@@ -17,7 +17,8 @@
     "cucumberAll": "npx cucumber-js --exit",
     "cucumberRegression": "npx cucumber-js --tags \"@Regression\" --parallel 2 --exit --format html:cucumber-report.html --retry 1",
     "cucumberValidation": "npx cucumber-js --tags \"@Validation\" --exit",
-    "cucumberParallel": "npx cucumber-js features/Ecommerce.feature --parallel 2 --exit"
+    "cucumberParallel": "npx cucumber-js features/Ecommerce.feature --parallel 2 --exit",
+    "merge-reports": "npx playwright merge-reports --reporter html ./all-blob-reports"
   },
   "keywords": [],
   "author": "",
